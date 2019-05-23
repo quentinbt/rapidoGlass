@@ -8,12 +8,17 @@ import { InterventionsComponent } from './interventions/interventions.component'
 import { InterventionComponent } from './intervention/intervention.component'
 import { AngularTokenService }  from 'angular-token'
 import { LayoutComponent } from './layout/layout.component'
+import { HomeComponent } from './home/home.component'
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
     children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
       {
         path: 'login',
         component: LoginComponent,
