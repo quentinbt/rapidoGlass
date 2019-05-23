@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
 import { UserService } from '../services/user.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-register',
@@ -8,14 +9,18 @@ import { UserService } from '../services/user.service'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup
+  public registerForm: FormGroup
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private userService: UserService
   ) {}
 
   ngOnInit() {
+    if (this.userService.hasSignedIn()) {
+      this.router.navigate(['/']);
+    }
     this.registerForm = this.formBuilder.group({
       login: ['', Validators.required],
       password: ['', Validators.required],

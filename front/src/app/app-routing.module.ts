@@ -2,15 +2,22 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
+import { CreateInterventionComponent } from './create-intervention/create-intervention.component'
+import { AngularTokenService }  from 'angular-token'
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'interventions/create',
+    component: CreateInterventionComponent,
+    canActivate: [AngularTokenService]
   },
 ]
 

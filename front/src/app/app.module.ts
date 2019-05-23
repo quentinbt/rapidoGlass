@@ -7,11 +7,12 @@ import { HttpClientModule } from '@angular/common/http'
 import { AngularTokenModule } from 'angular-token';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component'
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateInterventionComponent } from './create-intervention/create-intervention.component'
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

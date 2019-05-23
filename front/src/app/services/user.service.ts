@@ -22,4 +22,8 @@ export class UserService {
     );
   }
 
+  public hasSignedIn():boolean {
+    return this.tokenService.userSignedIn()
+  }
+
 }
