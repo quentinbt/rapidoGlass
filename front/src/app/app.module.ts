@@ -11,7 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateInterventionComponent } from './create-intervention/create-intervention.component';
 import { InterventionsComponent } from './interventions/interventions.component';
 import { InterventionComponent } from './intervention/intervention.component';
-import { EditInterventionComponent } from './edit-intervention/edit-intervention.component'
+import { EditInterventionComponent } from './edit-intervention/edit-intervention.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { GlobalModule } from './global.module'
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { EditInterventionComponent } from './edit-intervention/edit-intervention
       updatePasswordPath:         'auth',
       resetPasswordPath:          'auth/password',
       resetPasswordCallback:      window.location.href,
-    })
+    }),
+    GlobalModule,
+    BrowserAnimationsModule
   ],
   providers: [AngularTokenModule],
   bootstrap: [AppComponent],
