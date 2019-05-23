@@ -23,7 +23,7 @@ import { CreateInterventionComponent } from './create-intervention/create-interv
       apiPath:                    null,
 
       signInPath:                 'auth/sign_in',
-      signInRedirect:             null,
+      signInRedirect:             '/login',
       signInStoredUrlStorageKey:  null,
 
       signOutPath:                'auth/sign_out',
