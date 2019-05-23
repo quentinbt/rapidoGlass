@@ -14,7 +14,14 @@ export class LayoutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.hasSignedIn = this.userService.hasSignedIn()
+    this.userService.hasSignedIn()
+    this.userService.getHasSignedIn().subscribe((hasSignedIn: boolean) => {
+      this.hasSignedIn = hasSignedIn
+    })
+  }
+
+  public signOut(): void {
+    this.userService.signOut()
   }
 
 }
