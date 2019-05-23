@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+  <span>Glass Rapido</span>
+  <button *ngIf="!hasSignedIn" routerLink="/login" routerLinkActive="active" mat-raised-button color="primary">Se connecter</button>
+  <button *ngIf="!hasSignedIn" routerLink="/register" routerLinkActive="active" mat-raised-button color="primary">Créer un compte</button>
+</mat-toolbar>
+<router-outlet></router-outlet>

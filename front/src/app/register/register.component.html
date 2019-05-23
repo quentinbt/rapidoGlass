@@ -1,6 +1,16 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <input matInput type="text" formControlName="login">
-  <input matInput type="password" formControlName="password">
-  <input matInput type="password" formControlName="passwordConfirmation">
-  <button type="submit">Créer</button>
-</form>
+<div class="register">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="register__input">
+      <input matInput type="email" formControlName="login">
+    </mat-form-field>
+    <mat-form-field class="register__input">
+      <input matInput placeholder="Votre mot de passe" [type]="hide ? 'password' : 'text'" formControlName="password">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="register__input">
+      <input matInput placeholder="Votre mot de passe" [type]="hideConfirmation ? 'password' : 'text'" formControlName="passwordConfirmation">
+      <mat-icon matSuffix (click)="hideConfirmation = !hideConfirmation">{{hideConfirmation ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Créer le compte</button>
+  </form>
+</div>

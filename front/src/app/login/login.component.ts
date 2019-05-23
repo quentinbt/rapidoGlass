@@ -10,6 +10,7 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup
+  public hide = true
 
   constructor(
     private formBuilder: FormBuilder,

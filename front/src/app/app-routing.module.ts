@@ -7,36 +7,43 @@ import { EditInterventionComponent } from './edit-intervention/edit-intervention
 import { InterventionsComponent } from './interventions/interventions.component'
 import { InterventionComponent } from './intervention/intervention.component'
 import { AngularTokenService }  from 'angular-token'
+import { LayoutComponent } from './layout/layout.component'
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'interventions/create',
-    component: CreateInterventionComponent,
-    canActivate: [AngularTokenService]
-  },
-  {
-    path: 'interventions/edit/:id',
-    component: EditInterventionComponent,
-    canActivate: [AngularTokenService]
-  },
-  {
-    path: 'interventions',
-    component: InterventionsComponent,
-    canActivate: [AngularTokenService]
-  },
-  {
-    path: 'interventions/:id',
-    component: InterventionComponent,
-    canActivate: [AngularTokenService]
-  },
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'interventions/create',
+        component: CreateInterventionComponent,
+        canActivate: [AngularTokenService]
+      },
+      {
+        path: 'interventions/edit/:id',
+        component: EditInterventionComponent,
+        canActivate: [AngularTokenService]
+      },
+      {
+        path: 'interventions',
+        component: InterventionsComponent,
+        canActivate: [AngularTokenService]
+      },
+      {
+        path: 'interventions/:id',
+        component: InterventionComponent,
+        canActivate: [AngularTokenService]
+      },
+    ]
+  }
 ]
 
 @NgModule({

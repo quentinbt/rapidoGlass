@@ -1,5 +1,12 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <input matInput type="text" formControlName="login">
-  <input matInput type="password" formControlName="password">
-  <button type="submit">Créer</button>
-</form>
+<div class="login">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="login__input">
+      <input matInput type="text" formControlName="login">
+    </mat-form-field>
+    <mat-form-field class="login__input">
+      <input matInput placeholder="Votre mot de passe" [type]="hide ? 'password' : 'text'" formControlName="password">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Se connecter</button>
+  </form>
+</div>

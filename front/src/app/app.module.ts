@@ -13,11 +13,12 @@ import { InterventionsComponent } from './interventions/interventions.component'
 import { InterventionComponent } from './intervention/intervention.component';
 import { EditInterventionComponent } from './edit-intervention/edit-intervention.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { GlobalModule } from './global.module'
+import { GlobalModule } from './global/global.module';
+import { LayoutComponent } from './layout/layout.component'
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent, InterventionComponent, EditInterventionComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent, InterventionComponent, EditInterventionComponent, LayoutComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
