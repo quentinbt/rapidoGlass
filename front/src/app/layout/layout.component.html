@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
   <span>Glass Rapido</span>
+  <span class="spacer"></span>
   <button *ngIf="!hasSignedIn" routerLink="/login" routerLinkActive="active" mat-raised-button color="primary">Se connecter</button>
   <button *ngIf="!hasSignedIn" routerLink="/register" routerLinkActive="active" mat-raised-button color="primary">Créer un compte</button>
   <button *ngIf="hasSignedIn" (click)="signOut()" mat-raised-button color="primary">Se déconnecter</button>
