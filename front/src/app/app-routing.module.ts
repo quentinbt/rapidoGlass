@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
 import { CreateInterventionComponent } from './create-intervention/create-intervention.component'
 import { InterventionsComponent } from './interventions/interventions.component'
+import { InterventionComponent } from './intervention/intervention.component'
 import { AngularTokenService }  from 'angular-token'
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'interventions',
     component: InterventionsComponent,
+    canActivate: [AngularTokenService]
+  },
+  {
+    path: 'interventions/:id',
+    component: InterventionComponent,
     canActivate: [AngularTokenService]
   },
 ]

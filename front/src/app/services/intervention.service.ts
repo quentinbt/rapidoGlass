@@ -10,7 +10,7 @@ export class InterventionService {
 
   constructor(private http: HttpClient) {}
 
-  public getInterventions(): Observable<Intervention[]> {
+  public getAll(): Observable<Intervention[]> {
     const url = 'interventions.json'
     return this.http.get<Intervention[]>(url)
   }
@@ -18,5 +18,10 @@ export class InterventionService {
   public create(intervention: Intervention): Observable<Intervention> {
     const url = 'interventions.json'
     return this.http.post<Intervention>(url, intervention)
+  }
+
+  public show(interventionId: number): Observable<Intervention> {
+    const url = `interventions/${interventionId}.json`
+    return this.http.get<Intervention>(url)
   }
 }

@@ -16,8 +16,8 @@ export class InterventionsComponent implements OnInit {
     this.getInterventions()
   }
 
-  private getInterventions() {
-    this.interventionService.getInterventions().subscribe((interventions: Intervention[]) => {
+  private getInterventions(): void {
+    this.interventionService.getAll().subscribe((interventions: Intervention[]) => {
       this.interventions = interventions
     })
   }

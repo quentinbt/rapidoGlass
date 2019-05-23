@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
 import { InterventionService } from '../services/intervention.service'
 import { Intervention } from '../interfaces/intervention'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-create-intervention',
@@ -13,6 +14,7 @@ export class CreateInterventionComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private interventionService: InterventionService
   ) {}
 
@@ -22,11 +24,13 @@ export class CreateInterventionComponent implements OnInit {
     })
   }
 
-  public onSubmit() {
+  public onSubmit(): void {
     if (!this.interventionForm.valid) {
       return
     }
-    this.interventionService.create(this.interventionForm.value).subscribe()
+    this.interventionService.create(this.interventionForm.value).subscribe((intervention: Intervention) => {
+      this.router.navigate(['interventions', intervention.id]);
+    })
   }
 
 }
