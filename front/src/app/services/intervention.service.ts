@@ -14,4 +14,9 @@ export class InterventionService {
     const url = 'interventions.json'
     return this.http.get<Intervention[]>(url)
   }
+
+  public create(intervention: Intervention): Observable<Intervention> {
+    const url = 'interventions.json'
+    return this.http.post<Intervention>(url, intervention)
+  }
 }

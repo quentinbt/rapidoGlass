@@ -8,11 +8,12 @@ import { AngularTokenModule } from 'angular-token';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component'
 import { ReactiveFormsModule } from '@angular/forms';
-import { CreateInterventionComponent } from './create-intervention/create-intervention.component'
+import { CreateInterventionComponent } from './create-intervention/create-intervention.component';
+import { InterventionsComponent } from './interventions/interventions.component'
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

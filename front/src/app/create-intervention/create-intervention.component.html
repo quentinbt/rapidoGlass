@@ -1,3 +1,4 @@
-<p>
-  create-intervention works!
-</p>
+<form [formGroup]="interventionForm" (ngSubmit)="onSubmit()">
+  <input matInput type="text" formControlName="description">
+  <button type="submit">Créer</button>
+</form>

@@ -11,6 +11,7 @@ class InterventionsController < ApplicationController
 
   def create
     @intervention = Intervention.new(intervention_params)
+    @intervention.user = current_user
     if @intervention.save
       render :show, status: :created, location: @intervention
     else
