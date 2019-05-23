@@ -24,4 +24,9 @@ export class InterventionService {
     const url = `interventions/${interventionId}.json`
     return this.http.get<Intervention>(url)
   }
+
+  public update(intervention: Intervention): Observable<Intervention> {
+    const url = `interventions/${intervention.id}.json`
+    return this.http.put<Intervention>(url, intervention)
+  }
 }

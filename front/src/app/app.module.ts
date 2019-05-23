@@ -10,11 +10,12 @@ import { RegisterComponent } from './register/register.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateInterventionComponent } from './create-intervention/create-intervention.component';
 import { InterventionsComponent } from './interventions/interventions.component';
-import { InterventionComponent } from './intervention/intervention.component'
+import { InterventionComponent } from './intervention/intervention.component';
+import { EditInterventionComponent } from './edit-intervention/edit-intervention.component'
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent, InterventionComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent, InterventionComponent, EditInterventionComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

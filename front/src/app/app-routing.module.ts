@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
 import { CreateInterventionComponent } from './create-intervention/create-intervention.component'
+import { EditInterventionComponent } from './edit-intervention/edit-intervention.component'
 import { InterventionsComponent } from './interventions/interventions.component'
 import { InterventionComponent } from './intervention/intervention.component'
 import { AngularTokenService }  from 'angular-token'
@@ -19,6 +20,11 @@ const routes: Routes = [
   {
     path: 'interventions/create',
     component: CreateInterventionComponent,
+    canActivate: [AngularTokenService]
+  },
+  {
+    path: 'interventions/edit/:id',
+    component: EditInterventionComponent,
     canActivate: [AngularTokenService]
   },
   {

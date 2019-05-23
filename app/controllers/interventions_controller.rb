@@ -7,7 +7,8 @@ class InterventionsController < ApplicationController
     @interventions = Intervention.all
   end
 
-  def show; end
+  def show
+  end
 
   def create
     @intervention = Intervention.new(intervention_params)
@@ -20,7 +21,7 @@ class InterventionsController < ApplicationController
   end
 
   def update
-    if @intervention.update(interventions_params)
+    if @intervention.update(intervention_params)
       render :show, status: :created, location: @intervention
     else
       render json: @intervention.errors, status: :unprocessable_entity
