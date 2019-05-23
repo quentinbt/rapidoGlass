@@ -1,0 +1,6 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <input matInput type="text" formControlName="login">
+  <input matInput type="password" formControlName="password">
+  <input matInput type="password" formControlName="passwordConfirmation">
+  <button type="submit">Créer</button>
+</form>
