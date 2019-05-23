@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { FlexLayoutModule } from '@angular/flex-layout'
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -74,6 +75,7 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    FlexLayoutModule,
   ],
 })
 export class GlobalModule {}
