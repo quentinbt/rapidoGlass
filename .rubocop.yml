@@ -1,0 +1,45 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
+  DisplayCopNames: true
+  Exclude:
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'db/seeds/**/*'
+    - 'app/models/overhead_v1/*'
+    - 'front/**/*'
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/controllers/**/*.rb'
+
+Metrics/ClassLength:
+  Exclude:
+    - 'app/controllers/**/*.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/controllers/**/*.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/*.rb'
+    - 'config/routes.rb'
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - 'config/routes.rb'
