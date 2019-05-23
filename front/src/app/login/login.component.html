@@ -1,11 +1,17 @@
 <div class="login">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="login__input">
-      <input matInput type="text" formControlName="login">
+      <input matInput type="email" placeholder="email" formControlName="login">
+      <mat-error *ngIf="loginForm.controls.login.hasError('email')">
+        l'email doit être <strong> valide</strong>
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="login__input">
       <input matInput placeholder="Votre mot de passe" [type]="hide ? 'password' : 'text'" formControlName="password">
       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <mat-error *ngIf="loginForm.controls.password.hasError('minlength')">
+        le mot de passe doit contenir un minimum de <strong> 6 caractères</strong>
+      </mat-error>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Se connecter</button>
   </form>
