@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { InterventionService } from './intervention.service'
+import { InterventionService } from './services/intervention.service'
+import { Intervention } from './interfaces/intervention'
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { InterventionService } from './intervention.service'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public interventions
+  public interventions: Intervention[]
 
   constructor(private interventionService: InterventionService) {}
 
@@ -16,7 +17,7 @@ export class AppComponent {
   }
 
   private getInterventions() {
-    this.interventionService.getInterventions().subscribe(interventions => {
+    this.interventionService.getInterventions().subscribe((interventions: Intervention[]) => {
       this.interventions = interventions
     })
   }
