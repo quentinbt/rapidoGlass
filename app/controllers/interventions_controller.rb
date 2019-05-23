@@ -14,6 +14,7 @@ class InterventionsController < ApplicationController
     @intervention = Intervention.new(intervention_params)
     @intervention.user = current_user
     if @intervention.save
+      InterventionMailer.new_intervention(@intervention.user, @intervention.description).deliver
       render :show, status: :created, location: @intervention
     else
       render json: @intervention.errors, status: :unprocessable_entity
