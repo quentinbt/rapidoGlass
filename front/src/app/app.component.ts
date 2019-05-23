@@ -7,7 +7,7 @@ import { InterventionService } from './intervention.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public interventions = []
+  public interventions
 
   constructor(private interventionService: InterventionService) {
   }
