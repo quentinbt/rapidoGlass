@@ -1,4 +1,9 @@
-<form [formGroup]="interventionForm" (ngSubmit)="onSubmit()">
-  <input matInput type="text" formControlName="description">
-  <button type="submit">Créer</button>
-</form>
+<div class="create-intervention">
+  <form [formGroup]="interventionForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="create-intervention__input">
+      <input matInput type="text" placeholder="Déscription" formControlName="description">
+    </mat-form-field>
+    <input matInput type="text" formControlName="description">
+    <button mat-raised-button color="primary" type="submit">Créer la demande d'intervention</button>
+  </form>
+</div>

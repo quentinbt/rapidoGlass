@@ -1,4 +1,8 @@
-<form *ngIf="interventionForm" [formGroup]="interventionForm" (ngSubmit)="onSubmit()">
-  <input matInput type="text" formControlName="description">
-  <button type="submit">Mettre à jour</button>
-</form>
+<div class="edit-intervention">
+  <form *ngIf="interventionForm" [formGroup]="interventionForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="create-intervention__input">
+      <input matInput type="text" placeholder="Déscription" formControlName="description">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Modifier la demande d'intervention</button>
+  </form>
+</div>

@@ -8,6 +8,7 @@ import { Intervention } from '../interfaces/intervention'
   styleUrls: ['./interventions.component.scss']
 })
 export class InterventionsComponent implements OnInit {
+  public displayedColumns: string[] = ['description', 'email'];
   public interventions: Intervention[]
 
   constructor(private interventionService: InterventionService) {}

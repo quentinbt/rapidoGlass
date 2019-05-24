@@ -1,0 +1,8 @@
+.create-intervention {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    width: 100%;
+  }
+}
