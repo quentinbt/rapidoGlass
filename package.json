@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "heroku-postbuild": "cd front && npm install && npm run build && cd dist && mv front ../../public"
+    "heroku-postbuild": "cd front && npm install && ng build --aot --prod  && cd dist && mv front ../../public"
   },
   "author": "",
   "license": "ISC"
