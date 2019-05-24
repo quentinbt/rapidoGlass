@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service'
+import { User } from '../interfaces/user'
 
 @Component({
   selector: 'app-layout',
@@ -7,6 +8,7 @@ import { UserService } from '../services/user.service'
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  public currentUser: User
   private hasSignedIn = false
 
   constructor(
@@ -14,9 +16,13 @@ export class LayoutComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.userService.validateToken()
     this.userService.hasSignedIn()
     this.userService.getHasSignedIn().subscribe((hasSignedIn: boolean) => {
       this.hasSignedIn = hasSignedIn
+    })
+    this.userService.getCurrentUser().subscribe((currentUser: User) => {
+      this.currentUser = currentUser
     })
   }
 
