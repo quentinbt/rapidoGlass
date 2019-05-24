@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "node_modules/.bin/ng build",
     "test": "ng test",
     "lint": "ng lint",
     "prettier": "find src/app -name '*.ts' | xargs prettier --no-semi --single-quote --trailing-comma es5 --write",
