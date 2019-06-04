@@ -1,8 +1,18 @@
 <div class="edit-intervention">
   <form *ngIf="interventionForm" [formGroup]="interventionForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="create-intervention__input">
-      <input matInput type="text" placeholder="Déscription" formControlName="description">
+      <input matInput type="text" placeholder="Numéro de la plaque d'immatriculation" formControlName="plate_number">
+    </mat-form-field>
+    <mat-form-field class="create-intervention__input">
+      <input matInput type="text" placeholder="Modèle de la voiture" formControlName="car_model">
+    </mat-form-field>
+    <mat-form-field class="create-intervention__input">
+      <input matInput type="text" placeholder="Numéro d'assurance" formControlName="insurance_number">
+    </mat-form-field>
+    <mat-form-field class="create-intervention__input">
+      <input matInput type="text" placeholder="Information complémentaire" formControlName="description">
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Modifier la demande d'intervention</button>
   </form>
+  <button mat-raised-button color="primary" type="submit" (click)="cancel()">Annuler</button>
 </div>

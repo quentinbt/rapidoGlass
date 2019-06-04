@@ -21,10 +21,13 @@ export class CreateInterventionComponent implements OnInit {
   ngOnInit() {
     this.interventionForm = this.formBuilder.group({
       description: ['', Validators.required],
+      plate_number: [''],
+      car_model: [''],
+      insurance_number: [''],
     })
   }
 
-  public onSubmit(): void {
+  public onSubmit() {
     if (!this.interventionForm.valid) {
       return
     }
