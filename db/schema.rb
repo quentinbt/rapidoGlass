@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 2019_05_23_094044) do
 
   create_table "interventions", force: :cascade do |t|
     t.text "description"
+    t.text "plate_number"
+    t.text "car_model"
+    t.text "insurance_number"
     t.datetime "planned_at"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
