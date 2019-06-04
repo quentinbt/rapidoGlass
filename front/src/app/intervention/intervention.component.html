@@ -1,1 +1,15 @@
-{{ intervention | json }}
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Intervention demandé le {{ intervention.created_at | date:'dd/MM/yyyy' }}</mat-card-title>
+    <mat-card-subtitle>voiture: {{ intervention.car_model }}</mat-card-subtitle>
+    <mat-card-subtitle>Plaque d'immatriculation: {{ intervention.plate_number }}</mat-card-subtitle>
+    <mat-card-subtitle>Numéro d'assurance: {{ intervention.insurance_number }}</mat-card-subtitle>
+    <mat-card-subtitle>information complémentaire: {{ intervention.description }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Plannifier l'intervention</button>
+    <button mat-button routerLink="/interventions/edit/{{intervention.id}}">Modifier l'intervention</button>
+  </mat-card-actions>
+</mat-card>

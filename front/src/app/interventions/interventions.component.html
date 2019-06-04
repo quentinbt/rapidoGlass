@@ -1,5 +1,5 @@
 <div class="interventions">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table *ngIf="interventions" mat-table [dataSource]="interventions" class="mat-elevation-z8">
 
     <ng-container matColumnDef="description">
       <th mat-header-cell *matHeaderCellDef> Description </th>
