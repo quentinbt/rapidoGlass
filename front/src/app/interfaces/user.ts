@@ -8,4 +8,5 @@ export interface User {
   nickname?: string;
   image?: any;
   login?: string;
+  is_admin?: boolean;
 }
