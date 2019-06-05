@@ -3,11 +3,19 @@
   margin-right: 10%;
   height: 100vh;
 
+  &__home-btn {
+    cursor: pointer;
+  }
+
+  &__user-info {
+    margin-right: 15px;
+  }
+
   &__spacer {
     flex: 1 1 auto;
   }
 
   &__container {
-    padding: 15px;
+    padding: 40px 15px 50px 15px;
   }
 }
