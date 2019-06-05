@@ -12,7 +12,9 @@
     <mat-form-field class="create-intervention__input">
       <input matInput type="text" placeholder="Information complémentaire" formControlName="description">
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Modifier la demande d'intervention</button>
+    <div class="create-intervention__actions">
+      <button mat-raised-button color="primary" type="submit">Modifier la demande d'intervention</button>
+      <button mat-raised-button color="primary" type="button" (click)="cancel()">Annuler</button>
+    </div>
   </form>
-  <button mat-raised-button color="primary" type="submit" (click)="cancel()">Annuler</button>
 </div>
