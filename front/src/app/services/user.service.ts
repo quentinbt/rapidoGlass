@@ -44,10 +44,16 @@ export class UserService {
   }
 
   public validateToken(): void {
-    this.tokenService.validateToken().subscribe(res => {
-      const user: User = this.tokenService.currentUserData
-      this.setCurrentUser(user)
-    })
+    this.tokenService.validateToken().subscribe(
+      res => {
+        const user: User = this.tokenService.currentUserData
+        this.setCurrentUser(user)
+      },
+      error => {
+        this.setHasSignedIn(false)
+        localStorage.clear()
+      }
+    )
   }
 
   public getHasSignedIn(): Observable<boolean> {
