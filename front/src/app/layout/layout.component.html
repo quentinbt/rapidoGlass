@@ -3,7 +3,7 @@
     <span routerLink="/" class="layout__home-btn">Glass Rapido</span>
     <span class="layout__spacer"></span>
     <span *ngIf="currentUser" class="layout__user-info">{{ currentUser.email }}</span>
-    <button *ngIf="!hasSignedIn" routerLink="/login" routerLinkActive="active" mat-raised-button color="primary">Se connecter</button>
+    <button *ngIf="!hasSignedIn" class="layout__signin" routerLink="/login" routerLinkActive="active" mat-raised-button color="primary">Se connecter</button>
     <button *ngIf="!hasSignedIn" routerLink="/register" routerLinkActive="active" mat-raised-button color="primary">Créer un compte</button>
     <button *ngIf="hasSignedIn" (click)="signOut()" mat-raised-button color="primary">Se déconnecter</button>
   </mat-toolbar>
