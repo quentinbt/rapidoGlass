@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client'
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -21,6 +23,8 @@ import { HomeComponent } from './home/home.component'
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent, InterventionComponent, EditInterventionComponent, LayoutComponent, HomeComponent],
   imports: [
+    LoadingBarHttpClientModule,
+    LoadingBarRouterModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
