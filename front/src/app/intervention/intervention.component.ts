@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { InterventionService } from '../services/intervention.service'
 import { UserService } from '../services/user.service'
@@ -8,7 +8,7 @@ import { User } from '../interfaces/user'
 @Component({
   selector: 'app-intervention',
   templateUrl: './intervention.component.html',
-  styleUrls: ['./intervention.component.scss']
+  styleUrls: ['./intervention.component.scss'],
 })
 export class InterventionComponent implements OnInit {
   public intervention: Intervention
@@ -17,7 +17,7 @@ export class InterventionComponent implements OnInit {
   constructor(
     private interventionService: InterventionService,
     private userService: UserService,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {
     this.route.params.subscribe(params => {
       if (params.id) {
@@ -28,14 +28,14 @@ export class InterventionComponent implements OnInit {
       this.currentUser = currentUser
     })
   }
-    
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   private getIntervention(id: number): void {
-    this.interventionService.show(id).subscribe((intervention: Intervention) => {
-      this.intervention = intervention
-    })
+    this.interventionService
+      .show(id)
+      .subscribe((intervention: Intervention) => {
+        this.intervention = intervention
+      })
   }
 }

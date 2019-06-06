@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, FormArray } from '@angular/forms'
+import { Component, OnInit } from '@angular/core'
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+  FormArray,
+} from '@angular/forms'
 import { UserService } from '../services/user.service'
 import { Router } from '@angular/router'
 import { MyErrorStateMatcher } from '../global/errorStateMachter'
@@ -7,7 +13,7 @@ import { MyErrorStateMatcher } from '../global/errorStateMachter'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup
@@ -27,7 +33,10 @@ export class LoginComponent implements OnInit {
 
     this.loginForm = this.formBuilder.group({
       login: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
     })
 
     this.matcher = new MyErrorStateMatcher()
@@ -39,5 +48,4 @@ export class LoginComponent implements OnInit {
     }
     this.userService.signIn(this.loginForm.value)
   }
-
 }

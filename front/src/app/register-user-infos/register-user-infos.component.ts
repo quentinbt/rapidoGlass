@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
 import { UserService } from '../services/user.service'
 import { Router } from '@angular/router'
@@ -6,7 +6,7 @@ import { Router } from '@angular/router'
 @Component({
   selector: 'app-register-user-infos',
   templateUrl: './register-user-infos.component.html',
-  styleUrls: ['./register-user-infos.component.scss']
+  styleUrls: ['./register-user-infos.component.scss'],
 })
 export class RegisterUserInfosComponent implements OnInit {
   public userInfosForm: FormGroup
@@ -32,8 +32,7 @@ export class RegisterUserInfosComponent implements OnInit {
       return
     }
     this.userService.update(this.userInfosForm.value).subscribe(user => {
-      this.router.navigate(['/interventions']);
+      this.router.navigate(['/interventions'])
     })
   }
-
 }

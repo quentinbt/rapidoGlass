@@ -6,23 +6,33 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HttpClientModule } from '@angular/common/http'
-import { AngularTokenModule } from 'angular-token';
-import { LoginComponent } from './login/login.component';
+import { AngularTokenModule } from 'angular-token'
+import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
-import { ReactiveFormsModule } from '@angular/forms';
-import { CreateInterventionComponent } from './create-intervention/create-intervention.component';
-import { InterventionsComponent } from './interventions/interventions.component';
-import { InterventionComponent } from './intervention/intervention.component';
-import { EditInterventionComponent } from './edit-intervention/edit-intervention.component';
+import { ReactiveFormsModule } from '@angular/forms'
+import { CreateInterventionComponent } from './create-intervention/create-intervention.component'
+import { InterventionsComponent } from './interventions/interventions.component'
+import { InterventionComponent } from './intervention/intervention.component'
+import { EditInterventionComponent } from './edit-intervention/edit-intervention.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { GlobalModule } from './global/global.module';
-import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './home/home.component';
+import { GlobalModule } from './global/global.module'
+import { LayoutComponent } from './layout/layout.component'
+import { HomeComponent } from './home/home.component'
 import { RegisterUserInfosComponent } from './register-user-infos/register-user-infos.component'
 
-
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent, InterventionComponent, EditInterventionComponent, LayoutComponent, HomeComponent, RegisterUserInfosComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    CreateInterventionComponent,
+    InterventionsComponent,
+    InterventionComponent,
+    EditInterventionComponent,
+    LayoutComponent,
+    HomeComponent,
+    RegisterUserInfosComponent,
+  ],
   imports: [
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
@@ -31,27 +41,27 @@ import { RegisterUserInfosComponent } from './register-user-infos/register-user-
     AppRoutingModule,
     ReactiveFormsModule,
     AngularTokenModule.forRoot({
-      apiBase:                    null,
-      apiPath:                    null,
+      apiBase: null,
+      apiPath: null,
 
-      signInPath:                 'auth/sign_in',
-      signInRedirect:             '/login',
-      signInStoredUrlStorageKey:  null,
+      signInPath: 'auth/sign_in',
+      signInRedirect: '/login',
+      signInStoredUrlStorageKey: null,
 
-      signOutPath:                'auth/sign_out',
-      validateTokenPath:          'auth/validate_token',
-      signOutFailedValidate:      false,
+      signOutPath: 'auth/sign_out',
+      validateTokenPath: 'auth/validate_token',
+      signOutFailedValidate: false,
 
-      registerAccountPath:        'auth',
-      deleteAccountPath:          'auth',
-      registerAccountCallback:    window.location.href,
+      registerAccountPath: 'auth',
+      deleteAccountPath: 'auth',
+      registerAccountCallback: window.location.href,
 
-      updatePasswordPath:         'auth',
-      resetPasswordPath:          'auth/password',
-      resetPasswordCallback:      window.location.href,
+      updatePasswordPath: 'auth',
+      resetPasswordPath: 'auth/password',
+      resetPasswordCallback: window.location.href,
     }),
     GlobalModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [AngularTokenModule],
   bootstrap: [AppComponent],

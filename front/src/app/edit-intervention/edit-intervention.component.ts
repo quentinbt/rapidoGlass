@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
 import { InterventionService } from '../services/intervention.service'
@@ -9,7 +9,7 @@ import { Location } from '@angular/common'
 @Component({
   selector: 'app-edit-intervention',
   templateUrl: './edit-intervention.component.html',
-  styleUrls: ['./edit-intervention.component.scss']
+  styleUrls: ['./edit-intervention.component.scss'],
 })
 export class EditInterventionComponent implements OnInit {
   public interventionForm: FormGroup
@@ -28,13 +28,14 @@ export class EditInterventionComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   private getIntervention(id: number): void {
-    this.interventionService.show(id).subscribe((intervention: Intervention) => {
-      this.buildForm(intervention)
-    })
+    this.interventionService
+      .show(id)
+      .subscribe((intervention: Intervention) => {
+        this.buildForm(intervention)
+      })
   }
 
   private buildForm(intervention: Intervention) {
@@ -51,13 +52,14 @@ export class EditInterventionComponent implements OnInit {
     if (!this.interventionForm.valid) {
       return
     }
-    this.interventionService.update(this.interventionForm.value).subscribe((intervention: Intervention) => {
-      this.router.navigate(['interventions', intervention.id]);
-    })
+    this.interventionService
+      .update(this.interventionForm.value)
+      .subscribe((intervention: Intervention) => {
+        this.router.navigate(['interventions', intervention.id])
+      })
   }
 
   public cancel(): void {
     this.location.back()
   }
-
 }

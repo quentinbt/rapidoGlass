@@ -7,7 +7,6 @@ import { Observable } from 'rxjs'
   providedIn: 'root',
 })
 export class InterventionService {
-
   constructor(private http: HttpClient) {}
 
   public getAll(): Observable<Intervention[]> {

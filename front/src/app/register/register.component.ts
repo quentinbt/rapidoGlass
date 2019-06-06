@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
 import { UserService } from '../services/user.service'
 import { Router } from '@angular/router'
@@ -6,7 +6,7 @@ import { Router } from '@angular/router'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
   public registerForm: FormGroup
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     if (this.userService.hasSignedIn()) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/'])
     }
     this.registerForm = this.formBuilder.group({
       login: ['', Validators.required],
@@ -35,8 +35,7 @@ export class RegisterComponent implements OnInit {
       return
     }
     this.userService.register(this.registerForm.value).subscribe(user => {
-      this.router.navigate(['/register-user-infos']);
+      this.router.navigate(['/register-user-infos'])
     })
   }
-
 }

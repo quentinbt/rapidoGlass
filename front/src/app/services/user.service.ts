@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import { BehaviorSubject, Observable } from 'rxjs'
-import { AngularTokenService, SignInData, RegisterData } from 'angular-token';
-import { User } from '../interfaces/user';
+import { AngularTokenService, SignInData, RegisterData } from 'angular-token'
+import { User } from '../interfaces/user'
 import { HttpClient } from '@angular/common/http'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
   private hasSignedIn$ = new BehaviorSubject<boolean>(false)
@@ -14,20 +14,20 @@ export class UserService {
   constructor(
     private tokenService: AngularTokenService,
     private http: HttpClient
-  ) { }
+  ) {}
 
   public register(user: RegisterData) {
-    return this.tokenService.registerAccount({...user}) 
+    return this.tokenService.registerAccount({ ...user })
   }
 
   public signIn(user: SignInData): void {
-    this.tokenService.signIn({...user}).subscribe(
+    this.tokenService.signIn({ ...user }).subscribe(
       res => {
         console.log(res)
         this.setHasSignedIn(true)
       },
-      error =>    console.log(error)
-    );
+      error => console.log(error)
+    )
   }
 
   public signOut(): void {
@@ -35,11 +35,11 @@ export class UserService {
       res => {
         this.setHasSignedIn(false)
       },
-      error =>    console.log(error)
-    );
+      error => console.log(error)
+    )
   }
 
-  public hasSignedIn():boolean {
+  public hasSignedIn(): boolean {
     this.hasSignedIn$.next(this.tokenService.userSignedIn())
     return this.tokenService.userSignedIn()
   }
@@ -83,5 +83,4 @@ export class UserService {
   private setCurrentUser(user: User): void {
     this.currentUser$.next(user)
   }
-
 }

@@ -6,7 +6,7 @@ import { CreateInterventionComponent } from './create-intervention/create-interv
 import { EditInterventionComponent } from './edit-intervention/edit-intervention.component'
 import { InterventionsComponent } from './interventions/interventions.component'
 import { InterventionComponent } from './intervention/intervention.component'
-import { AngularTokenService }  from 'angular-token'
+import { AngularTokenService } from 'angular-token'
 import { LayoutComponent } from './layout/layout.component'
 import { HomeComponent } from './home/home.component'
 import { RegisterUserInfosComponent } from './register-user-infos/register-user-infos.component'
@@ -26,35 +26,35 @@ const routes: Routes = [
       },
       {
         path: 'register',
-        component: RegisterComponent
+        component: RegisterComponent,
       },
       {
         path: 'register-user-infos',
         component: RegisterUserInfosComponent,
-        canActivate: [AngularTokenService]
+        canActivate: [AngularTokenService],
       },
       {
         path: 'interventions/create',
         component: CreateInterventionComponent,
-        canActivate: [AngularTokenService]
+        canActivate: [AngularTokenService],
       },
       {
         path: 'interventions/edit/:id',
         component: EditInterventionComponent,
-        canActivate: [AngularTokenService]
+        canActivate: [AngularTokenService],
       },
       {
         path: 'interventions',
         component: InterventionsComponent,
-        canActivate: [AngularTokenService]
+        canActivate: [AngularTokenService],
       },
       {
         path: 'interventions/:id',
         component: InterventionComponent,
-        canActivate: [AngularTokenService]
+        canActivate: [AngularTokenService],
       },
-    ]
-  }
+    ],
+  },
 ]
 
 @NgModule({
