@@ -34,7 +34,9 @@ export class RegisterComponent implements OnInit {
     if (!this.registerForm.valid) {
       return
     }
-    this.userService.register(this.registerForm.value)
+    this.userService.register(this.registerForm.value).subscribe(user => {
+      this.router.navigate(['/register-user-infos']);
+    })
   }
 
 }
