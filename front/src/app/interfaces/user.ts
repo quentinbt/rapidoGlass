@@ -4,9 +4,11 @@ export interface User {
   id?: number;
   provider?: string;
   uid?: string;
-  name?: string;
-  nickname?: string;
-  image?: any;
   login?: string;
   is_admin?: boolean;
+  first_name?: string;
+  last_name?: string;
+  address?: string;
+  zipcode?: string;
+  city?: string;
 }
