@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs'
 import { AngularTokenService, SignInData, RegisterData } from 'angular-token';
 import { User } from '../interfaces/user';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,13 @@ export class UserService {
   private hasSignedIn$ = new BehaviorSubject<boolean>(false)
   private currentUser$ = new BehaviorSubject<User>({})
 
-  constructor(private tokenService: AngularTokenService) { }
+  constructor(
+    private tokenService: AngularTokenService,
+    private http: HttpClient
+  ) { }
 
-  public register(user: RegisterData): void {
-    this.tokenService.registerAccount({...user}).subscribe(
-      res =>      console.log(res),
-      error =>    console.log(error)
-    );
+  public register(user: RegisterData) {
+    return this.tokenService.registerAccount({...user}) 
   }
 
   public signIn(user: SignInData): void {
@@ -54,6 +55,11 @@ export class UserService {
         localStorage.clear()
       }
     )
+  }
+
+  public update(user: User): Observable<User> {
+    const url = 'myprofile.json'
+    return this.http.put<User>(url, user)
   }
 
   public getHasSignedIn(): Observable<boolean> {
