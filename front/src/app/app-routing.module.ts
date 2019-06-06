@@ -9,6 +9,7 @@ import { InterventionComponent } from './intervention/intervention.component'
 import { AngularTokenService }  from 'angular-token'
 import { LayoutComponent } from './layout/layout.component'
 import { HomeComponent } from './home/home.component'
+import { RegisterUserInfosComponent } from './register-user-infos/register-user-infos.component'
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
+      },
+      {
+        path: 'register-user-infos',
+        component: RegisterUserInfosComponent,
+        canActivate: [AngularTokenService]
       },
       {
         path: 'interventions/create',
