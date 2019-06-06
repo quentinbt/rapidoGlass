@@ -1,0 +1,20 @@
+<div class="register-user-infos">
+  <form [formGroup]="userInfosForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="register-user-infos__input">
+      <input matInput placeholder="Votre prénom" type="text" formControlName="first_name">
+    </mat-form-field>
+    <mat-form-field class="register-user-infos__input">
+      <input matInput placeholder="Votre nom" type="text" formControlName="last_name">
+    </mat-form-field>
+    <mat-form-field class="register-user-infos__input">
+      <input matInput placeholder="Votre adresse" type="text" formControlName="address">
+    </mat-form-field>
+    <mat-form-field class="register-user-infos__input">
+      <input matInput placeholder="Votre code postal" type="text" formControlName="zipcode">
+    </mat-form-field>
+    <mat-form-field class="register-user-infos__input">
+      <input matInput placeholder="Votre ville" type="text" formControlName="city">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Enregistrer vos informations</button>
+  </form>
+</div>

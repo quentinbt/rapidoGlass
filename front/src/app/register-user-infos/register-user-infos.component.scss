@@ -1,0 +1,8 @@
+.register-user-infos {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    width: 100%;
+  }
+}
