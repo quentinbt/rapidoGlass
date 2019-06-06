@@ -17,11 +17,12 @@ import { EditInterventionComponent } from './edit-intervention/edit-intervention
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { GlobalModule } from './global/global.module';
 import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { RegisterUserInfosComponent } from './register-user-infos/register-user-infos.component'
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent, InterventionComponent, EditInterventionComponent, LayoutComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, CreateInterventionComponent, InterventionsComponent, InterventionComponent, EditInterventionComponent, LayoutComponent, HomeComponent, RegisterUserInfosComponent],
   imports: [
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
