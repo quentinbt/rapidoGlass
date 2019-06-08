@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
 import { InterventionService } from '../services/intervention.service'
 import { Intervention } from '../interfaces/intervention'
 import { Router } from '@angular/router'
+import { UserService } from '../services/user.service'
+import { User } from '../interfaces/user'
 
 @Component({
   selector: 'app-create-intervention',
@@ -15,15 +17,21 @@ export class CreateInterventionComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private interventionService: InterventionService
+    private interventionService: InterventionService,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
-    this.interventionForm = this.formBuilder.group({
-      description: ['', Validators.required],
-      plate_number: [''],
-      car_model: [''],
-      insurance_number: [''],
+    this.userService.getCurrentUser().subscribe((currentUser: User) => {
+      this.interventionForm = this.formBuilder.group({
+        description: ['', Validators.required],
+        plate_number: [''],
+        car_model: [''],
+        insurance_number: [''],
+        address: [currentUser.address || ''],
+        city: [currentUser.city || ''],
+        zipcode: [currentUser.zipcode || ''],
+      })
     })
   }
 
