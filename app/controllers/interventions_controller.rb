@@ -38,7 +38,7 @@ class InterventionsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def intervention_params
-    params.require(:intervention).permit(:description, :planned_at, :plate_number, :car_model, :insurance_number)
+    params.require(:intervention).permit(:description, :planned_at, :plate_number, :car_model, :insurance_number, :address, :city, :zipcode)
   end
 
   def set_intervention
