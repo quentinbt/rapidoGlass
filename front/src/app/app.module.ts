@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client'
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router'
+import { ToastrModule } from 'ngx-toastr'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -40,6 +41,7 @@ import { RegisterUserInfosComponent } from './register-user-infos/register-user-
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
     AngularTokenModule.forRoot({
       apiBase: null,
       apiPath: null,
