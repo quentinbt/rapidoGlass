@@ -3,6 +3,8 @@ import { BehaviorSubject, Observable } from 'rxjs'
 import { AngularTokenService, SignInData, RegisterData } from 'angular-token'
 import { User } from '../interfaces/user'
 import { HttpClient } from '@angular/common/http'
+import { ToastrService } from 'ngx-toastr'
+import { tap } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +15,8 @@ export class UserService {
 
   constructor(
     private tokenService: AngularTokenService,
-    private http: HttpClient
+    private http: HttpClient,
+    private toastr: ToastrService
   ) {}
 
   public register(user: RegisterData) {
@@ -23,7 +26,7 @@ export class UserService {
   public signIn(user: SignInData): void {
     this.tokenService.signIn({ ...user }).subscribe(
       res => {
-        console.log(res)
+        this.toastr.success('', 'Vous êtes connecté!')
         this.setHasSignedIn(true)
       },
       error => console.log(error)
@@ -33,6 +36,7 @@ export class UserService {
   public signOut(): void {
     this.tokenService.signOut().subscribe(
       res => {
+        this.toastr.success('', 'Vous êtes déconnecté!')
         this.setHasSignedIn(false)
       },
       error => console.log(error)
@@ -60,6 +64,11 @@ export class UserService {
   public update(user: User): Observable<User> {
     const url = 'myprofile.json'
     return this.http.put<User>(url, user)
+    .pipe(
+      tap(res => {
+        this.toastr.success('', 'Vos informations personnelle on été enregistré!')
+      })
+    )
   }
 
   public getHasSignedIn(): Observable<boolean> {
