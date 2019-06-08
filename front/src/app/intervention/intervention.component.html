@@ -1,10 +1,13 @@
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-title>Intervention demandé le {{ intervention.created_at | date:'dd/MM/yyyy' }}</mat-card-title>
-    <mat-card-subtitle>voiture: {{ intervention.car_model }}</mat-card-subtitle>
+    <mat-card-subtitle>Voiture: {{ intervention.car_model }}</mat-card-subtitle>
     <mat-card-subtitle>Plaque d'immatriculation: {{ intervention.plate_number }}</mat-card-subtitle>
     <mat-card-subtitle>Numéro d'assurance: {{ intervention.insurance_number }}</mat-card-subtitle>
-    <mat-card-subtitle>information complémentaire: {{ intervention.description }}</mat-card-subtitle>
+    <mat-card-subtitle>Information complémentaire: {{ intervention.description }}</mat-card-subtitle>
+    <mat-card-subtitle>Adresse de l'intervention: {{ intervention.address }}</mat-card-subtitle>
+    <mat-card-subtitle>Ville de l'intervention: {{ intervention.city }}</mat-card-subtitle>
+    <mat-card-subtitle>Code postal de l'intervention: {{ intervention.zipcode }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
   </mat-card-content>
