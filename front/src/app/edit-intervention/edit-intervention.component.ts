@@ -32,10 +32,10 @@ export class EditInterventionComponent implements OnInit {
 
   private getIntervention(id: number): void {
     this.interventionService
-      .show(id)
-      .subscribe((intervention: Intervention) => {
-        this.buildForm(intervention)
-      })
+    .show(id)
+    .subscribe((intervention: Intervention) => {
+      this.buildForm(intervention)
+    })
   }
 
   private buildForm(intervention: Intervention) {
@@ -45,6 +45,9 @@ export class EditInterventionComponent implements OnInit {
       plate_number: [intervention.plate_number],
       car_model: [intervention.car_model],
       insurance_number: [intervention.insurance_number],
+      address: [intervention.address],
+      city: [intervention.city],
+      zipcode: [intervention.zipcode],
     })
   }
 
@@ -53,10 +56,10 @@ export class EditInterventionComponent implements OnInit {
       return
     }
     this.interventionService
-      .update(this.interventionForm.value)
-      .subscribe((intervention: Intervention) => {
-        this.router.navigate(['interventions', intervention.id])
-      })
+    .update(this.interventionForm.value)
+    .subscribe((intervention: Intervention) => {
+      this.router.navigate(['interventions', intervention.id])
+    })
   }
 
   public cancel(): void {
