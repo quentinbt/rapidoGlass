@@ -6,4 +6,7 @@ export interface Intervention {
   plate_number?: string
   car_model?: string
   insurance_number?: string
+  address?: string
+  city?: string
+  zipcode?: string
 }
