@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 2019_05_23_094044) do
     t.text "insurance_number"
     t.datetime "planned_at"
     t.bigint "user_id", null: false
+    t.string "address"
+    t.string "city"
+    t.string "zipcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_interventions_on_user_id"
